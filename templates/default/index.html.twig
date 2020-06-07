@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="col-12">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <div class="container">
+                    <div class="row w-100">
+                        <div class="col-12">
+                            <div class="col-12 text-center" style="margin-top: 50px;">
+                                <h1>SuperiorWaste</h1>
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                            </div>
+                        </div>
+
+                        <div class="col-12" style="display:flex;">
+
+                            <div class="col-4">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10" style="border: solid 1px black;height:150px;display: flex;
+                                justify-content: center;
+                                align-items: center;">
+                                    <a href="{{ path('afvalRegisteren') }}">Afval Registreren</a>
+                                </div>
+                                <div class="col-1">
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10" style="border: solid 1px black;height:150px;display: flex;
+                                justify-content: center;
+                                align-items: center;">
+                                    <a href="{{ path('apparaatRegisteren') }}">Apparaat Registreren</a>
+                                </div>
+                                <div class="col-1">
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10" style="border: solid 1px black;height:150px;display: flex;
+                                justify-content: center;
+                                align-items: center;">
+                                    <a href="{{ path('onderdeelRegistreren') }}">Onderdeel Registreren</a>
+                                </div>
+                                <div class="col-1">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                        <div class="col-12" style="display:flex;">
+
+                            <div class="col-4">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10" style="border: solid 1px black;height:150px;display: flex;
+                                justify-content: center;
+                                align-items: center;">
+                                    <a href="{{ path('locatie_index') }}">Afval Locaties Overzicht</a>
+                                </div>
+                                <div class="col-1">
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10" style="border: solid 1px black;height:150px;display: flex;
+                                justify-content: center;
+                                align-items: center;">
+                                    <a href="{{ path('apparaat_index') }}">Apparaten Overzicht</a>
+                                </div>
+                                <div class="col-1">
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="col-1">
+                                </div>
+                                <div class="col-10" style="border: solid 1px black;height:150px;display: flex;
+                                justify-content: center;
+                                align-items: center;">
+                                    <a href="{{ path('onderdeel_index') }}">Onderdelen Overzicht</a>
+                                </div>
+                                <div class="col-1">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <style>
+                    body{height:100vh;display: flex;
+                        align-items: center;}
+                </style>
+                <div class="row w-100">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-8" style="display: flex;
+    flex-flow: column;
+    align-items: center;">
+                        <a style="text-align:center;" href="{{ path('fos_user_security_login') }}">login</a>
+                    </div>
+                    <div class="col-2">
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

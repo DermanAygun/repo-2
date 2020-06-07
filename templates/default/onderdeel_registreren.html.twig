@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Onder(deel/delen) Registreren{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row w-100">
+            <div class="col-12 text-center" style="margin-top: 25px;">
+                <h2>Registreer de onder(deel/delen) van de apparaat die nu wordt opgehaald</h2>
+            </div>
+            <div class="col-12" style="margin-bottom: 25px;">
+                <hr>
+            </div>
+            <div class="col-12" style="display: flex;justify-content: center;">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button style="border: solid 1px black; margin-top: 25px;"
+                        class="btn">{{ button_label|default('Registreer onderdeel') }}</button>
+                {{ form_end(form) }}
+            </div>
+
+            <div class="col-12" style="margin-top: 75px;">
+                <a href="{{ path('default') }}">Geen onder(deel/delen)? Ga terug naar de homepagina.</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

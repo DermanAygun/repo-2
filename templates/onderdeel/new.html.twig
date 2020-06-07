@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Onderdeel{% endblock %}
+
+{% block body %}
+    <h1>Create new Onderdeel</h1>
+
+    {{ include('onderdeel/_form.html.twig') }}
+
+    <a href="{{ path('onderdeel_index') }}">back to list</a>
+{% endblock %}

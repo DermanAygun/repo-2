@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Apparaat index{% endblock %}
+
+{% block body %}
+    <h1>Apparaat index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Naam</th>
+                <th>Inname_door</th>
+                <th>In_elkaar</th>
+                <th>Verkocht_gekocht</th>
+                <th>Datum_inname</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for apparaat in apparaats %}
+            <tr>
+                <td>{{ apparaat.id }}</td>
+                <td>{{ apparaat.naam }}</td>
+                <td>{{ apparaat.innameDoor }}</td>
+                <td>{{ apparaat.inElkaar ? 'Yes' : 'No' }}</td>
+                <td>{{ apparaat.verkochtGekocht ? 'Yes' : 'No' }}</td>
+                <td>{{ apparaat.datumInname ? apparaat.datumInname|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('apparaat_show', {'id': apparaat.id}) }}">show</a>
+                    <a href="{{ path('apparaat_edit', {'id': apparaat.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('apparaat_new') }}">Create new</a>
+{% endblock %}

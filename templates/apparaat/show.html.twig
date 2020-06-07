@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Apparaat{% endblock %}
+
+{% block body %}
+    <h1>Apparaat</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ apparaat.id }}</td>
+            </tr>
+            <tr>
+                <th>Naam</th>
+                <td>{{ apparaat.naam }}</td>
+            </tr>
+            <tr>
+                <th>Inname_door</th>
+                <td>{{ apparaat.innameDoor }}</td>
+            </tr>
+            <tr>
+                <th>In_elkaar</th>
+                <td>{{ apparaat.inElkaar ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Verkocht_gekocht</th>
+                <td>{{ apparaat.verkochtGekocht ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Datum_inname</th>
+                <td>{{ apparaat.datumInname ? apparaat.datumInname|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('apparaat_index') }}">back to list</a>
+
+    <a href="{{ path('apparaat_edit', {'id': apparaat.id}) }}">edit</a>
+
+    {{ include('apparaat/_delete_form.html.twig') }}
+{% endblock %}
